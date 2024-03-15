@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lair.unity
     guid: f33921a0c189cb94394b31e36f212e61
+  - enabled: 1
+    path: Assets/Scenes/City.unity
+    guid: f3b276ebd9cd3c54b9a83cc62e2547a8
   m_configObjects: {}
