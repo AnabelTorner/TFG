@@ -2654,7 +2654,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2701,8 +2701,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1967003154}
   smoothSpeed: 0.125
-  locationOffset: {x: 0, y: 1, z: -1}
-  rotationOffset: {x: 30, y: 0, z: 0}
+  locationOffset: {x: 0, y: 2.5, z: -3}
+  rotationOffset: {x: 31, y: 0, z: 0}
 --- !u!1001 &866613046
 PrefabInstance:
   m_ObjectHideFlags: 0
