@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float Speed = 6f;
+    public float Speed;
 
     private Rigidbody rb;
     private Vector3 inputs = Vector3.zero;
@@ -28,8 +28,7 @@ public class PlayerMovement : MonoBehaviour
         //Walk
         inputs.x = Input.GetAxis("Horizontal");
         inputs.z = Input.GetAxis("Vertical");
-        if (inputs != Vector3.zero)
-            transform.forward = inputs;
+        transform.forward = Vector3.forward;
 
         rb.MovePosition(rb.position + inputs * Speed * Time.fixedDeltaTime);
 

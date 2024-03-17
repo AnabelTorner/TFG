@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ce51c22329df34ea2eb5430f97ea61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 30
+  Speed: 3
 --- !u!1001 &1344371822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2305,9 +2305,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1338619951}
-  smoothSpeed: 0.125
-  locationOffset: {x: 0, y: 1.75, z: -1.5}
-  rotationOffset: {x: 30.8, y: 0, z: 0}
+  smoothSpeed: 0.5
+  locationOffset: {x: 0, y: 3, z: -2}
+  rotationOffset: {x: 35, y: 0, z: 0}
 --- !u!81 &2065712888
 AudioListener:
   m_ObjectHideFlags: 0
