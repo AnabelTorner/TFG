@@ -4,31 +4,47 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float force = 10f; // Fuerza de movimiento
+    public float Speed = 6f;
 
     private Rigidbody rb;
+    private Vector3 inputs = Vector3.zero;
 
-    private void Start()
+    //private Animator anim;
+    //private AudioSource sound;
+
+    //public AudioClip SFXfootSteps;
+
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
+        //anim = GetComponent<Animator>();
+        //sound = GetComponent<AudioSource>();
     }
 
-    private void Update()
+    void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal"); // Entrada horizontal (teclas A/D o flechas izquierda/derecha)
-        float v = Input.GetAxis("Vertical"); // Entrada vertical (teclas W/S o flechas arriba/abajo)
+        inputs = Vector3.zero;
 
-        Vector3 movement = new Vector3(h, 0f, v); // Vector de movimiento
+        //Walk
+        inputs.x = Input.GetAxis("Horizontal");
+        inputs.z = Input.GetAxis("Vertical");
+        if (inputs != Vector3.zero)
+            transform.forward = inputs;
 
-        // Aplicar fuerza al Rigidbody solo si hay entrada de teclado
-        if (Mathf.Abs(h) > 0.01f || Mathf.Abs(v) > 0.01f)
+        rb.MovePosition(rb.position + inputs * Speed * Time.fixedDeltaTime);
+
+        bool hasHorizontalInput = !Mathf.Approximately(inputs.x, 0f);
+        bool hasVerticalInput = !Mathf.Approximately(inputs.z, 0f);
+        //bool isWalking = hasHorizontalInput || hasVerticalInput;
+        //anim.SetBool("IsWalking", isWalking);
+        /*
+        if (isWalking)
         {
-            rb.AddForce(movement * force * Time.deltaTime);
+            if (!sound.isPlaying)
+            {
+                sound.Play();
+            }
         }
-        else
-        {
-            // Detener el movimiento si no hay entrada de teclado
-            rb.velocity = Vector3.zero;
-        }
+        */
     }
 }
