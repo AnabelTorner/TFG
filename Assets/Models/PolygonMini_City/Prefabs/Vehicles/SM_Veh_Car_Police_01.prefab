@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4922074669826246}
   - component: {fileID: 33983158228595186}
   - component: {fileID: 23415974151523692}
-  - component: {fileID: 2665503259439850104}
+  - component: {fileID: 5180311801150492809}
   m_Layer: 0
   m_Name: SM_Veh_Car_Police_01
   m_TagString: Untagged
@@ -254,8 +254,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2665503259439850104
-MeshCollider:
+--- !u!65 &5180311801150492809
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -272,10 +272,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: edd557d5298b57449a29971762fc39ef, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.79713035, y: 0.61202896, z: 1.4720709}
+  m_Center: {x: 0.0000008791685, y: 0.40159768, z: 0}
 --- !u!1 &1244961461998632
 GameObject:
   m_ObjectHideFlags: 0

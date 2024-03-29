@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4423247054189616}
   - component: {fileID: 33104346355669380}
   - component: {fileID: 23894425697840106}
-  - component: {fileID: 6903079455558257772}
+  - component: {fileID: 6752395133281477160}
   m_Layer: 0
   m_Name: SM_Prop_Dumpster_Closed_01
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6903079455558257772
-MeshCollider:
+--- !u!65 &6752395133281477160
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +102,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 9b75649a424c3ec41a5164d300fc85d4, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.601153, y: 0.5252427, z: 0.41734508}
+  m_Center: {x: -0.00000008940699, y: 0.26262134, z: -0.000001937151}

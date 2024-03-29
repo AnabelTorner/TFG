@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4613274644278650}
   - component: {fileID: 33641171896055726}
   - component: {fileID: 23358545304117660}
-  - component: {fileID: 5039424826336066077}
+  - component: {fileID: 4520618761546241438}
+  - component: {fileID: 8866356793648334397}
   m_Layer: 0
   m_Name: SM_Env_WallPark_Corner_01
   m_TagString: Untagged
@@ -84,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5039424826336066077
-MeshCollider:
+--- !u!65 &4520618761546241438
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +103,27 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 0cbb81e848b612148aa61611241ae4d8, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 1.1248093, y: 0.6380431, z: 0.25467074}
+  m_Center: {x: 0.40418518, y: 0.32091954, z: 0.028628532}
+--- !u!65 &8866356793648334397
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025012785267888}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.24159792, y: 0.6399411, z: 1.124812}
+  m_Center: {x: -0.037420582, y: 0.31997055, z: -0.40644222}

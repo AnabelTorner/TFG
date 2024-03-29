@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4487404791396254}
   - component: {fileID: 33190249310366094}
   - component: {fileID: 23718747904543926}
-  - component: {fileID: 3330689385553773032}
+  - component: {fileID: 6828152845168201287}
   m_Layer: 0
   m_Name: SM_Prop_Potplants_01
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3330689385553773032
-MeshCollider:
+--- !u!65 &6828152845168201287
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +102,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: aa04277dd9014b3479a6218dbe5d9309, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.36419064, y: 0.18394558, z: 0.15104023}
+  m_Center: {x: -0.000000037252903, y: 0.09197279, z: -0.000000022351742}
