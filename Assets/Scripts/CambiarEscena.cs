@@ -8,25 +8,22 @@ public class CambiarEscena : MonoBehaviour
 
     public string SceneName;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void CerrarJuego()
     {
-        Application.Quit();
-        Debug.Log("Salir");
+        Application.Quit(); //Cierra el juego
+        Debug.Log("Salir"); //Comprobación por consola para Unity
     }
 
     public void CambioEscena()
     {
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene(SceneName); //Carga la escena indicada
+    }
+
+    private void OnTriggerStay()
+    {
+        if (Input.GetKey(KeyCode.E)) //Comprueba que se pulsa la tecla E
+        {
+            CambioEscena(); //Carga la escena indicada
+        }
     }
 }
