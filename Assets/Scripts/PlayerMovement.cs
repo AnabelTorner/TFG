@@ -1,49 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float Speed;
+    public float moveSpeed = 5f; // Velocidad de movimiento del jugador
 
     private Rigidbody rb;
-    private Vector3 inputs = Vector3.zero;
-
-    //private Animator anim;
-    //private AudioSource sound;
-
-    //public AudioClip SFXfootSteps;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //anim = GetComponent<Animator>();
-        //sound = GetComponent<AudioSource>();
+        rb.freezeRotation = true; // Evitar rotaciones debido a colisiones
     }
 
-    void FixedUpdate()
+    // Update is called once per frame
+    void Update()
     {
-        inputs = Vector3.zero;
+        // Obtener la entrada de teclado para el movimiento horizontal y vertical
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
 
-        //Walk
-        inputs.x = Input.GetAxis("Horizontal");
-        inputs.z = Input.GetAxis("Vertical");
-        transform.forward = Vector3.forward;
+        // Calcular el vector de movimiento basado en la entrada del teclado
+        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
 
-        rb.MovePosition(rb.position + inputs * Speed * Time.fixedDeltaTime);
-
-        bool hasHorizontalInput = !Mathf.Approximately(inputs.x, 0f);
-        bool hasVerticalInput = !Mathf.Approximately(inputs.z, 0f);
-        //bool isWalking = hasHorizontalInput || hasVerticalInput;
-        //anim.SetBool("IsWalking", isWalking);
-        /*
-        if (isWalking)
-        {
-            if (!sound.isPlaying)
-            {
-                sound.Play();
-            }
-        }
-        */
+        // Aplicar el movimiento al Rigidbody
+        rb.velocity = movement * moveSpeed;
     }
 }
