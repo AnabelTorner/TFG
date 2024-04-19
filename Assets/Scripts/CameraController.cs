@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public Transform target; // Referencia al jugador
     public float smoothSpeed = 0.125f; // Velocidad de suavizado
