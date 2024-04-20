@@ -10,20 +10,20 @@ public class CambiarEscena : MonoBehaviour
 
     public void CerrarJuego()
     {
-        Application.Quit(); //Cierra el juego
-        Debug.Log("Salir"); //Comprobación por consola para Unity
+        Application.Quit(); // Cierra el juego
+        Debug.Log("Salir"); // Comprobación por consola para Unity
     }
 
     public void CambioEscena()
     {
-        SceneManager.LoadScene(SceneName); //Carga la escena indicada
+        SceneManager.LoadScene(SceneName); // Carga la escena indicada
     }
 
     private void OnTriggerStay()
     {
-        if (Input.GetKey(KeyCode.E)) //Comprueba que se pulsa la tecla E
+        if (Input.GetKey(KeyCode.E)) // Comprueba que se pulsa la tecla E
         {
-            CambioEscena(); //Carga la escena indicada
+            CambioEscena(); // Carga la escena indicada
         }
     }
 }

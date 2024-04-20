@@ -12,7 +12,7 @@ public class RandomObjectVisibility : MonoBehaviour
             objetos.SetActive(false);
         }
 
-        // Escoge una tarjeta aleatoria para volverla visible
+        // Escoge un objeto aleatorio para volverlo visible
         int indexObjetoVisible = Random.Range(0, objetos.Length);
         objetos[indexObjetoVisible].SetActive(true);
     }
