@@ -21,4 +21,12 @@ public class floatingImage : MonoBehaviour
     {
         floatImg.SetActive(false); // Desactiva la imagen flotante
     }
+
+    private void OnTriggerStay()
+    {
+        if (Input.GetKey(KeyCode.E)) // Comprueba que se pulsa la tecla E
+        {
+            floatImg.SetActive(false); // Desactiva la imagen flotante
+        }
+    }
 }
