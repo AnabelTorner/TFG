@@ -6,6 +6,7 @@ public class ItemCollector : MonoBehaviour
 {
     private bool itemCollected = false; // Variable para rastrear si el objeto ha sido recogido
     public GameObject itemImage; // Imagen del objeto en el canvas
+    public GameObject door;
 
     private void Start()
     {
@@ -24,6 +25,16 @@ public class ItemCollector : MonoBehaviour
         {
             gameObject.SetActive(false);
             itemImage.SetActive(true);
+            RotateDoor();
+        }
+    }
+
+    public void RotateDoor()
+    {
+        if (door != null)
+        {
+            // Girar el objeto 90 grados alrededor del eje Y
+            door.transform.Rotate(0, 90, 0);
         }
     }
 }

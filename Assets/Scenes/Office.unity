@@ -6326,6 +6326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 772654945}
+  door: {fileID: 1642480322}
 --- !u!1001 &136129372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42532,6 +42533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 772654945}
+  door: {fileID: 1642480322}
 --- !u!4 &911579086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4908693876627426, guid: 0919ec16a1935ec42b23aa5e816c67a8, type: 3}
@@ -51728,6 +51730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 772654945}
+  door: {fileID: 1642480322}
 --- !u!4 &1140789803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4617066611446350, guid: 8633d1fc084eee24383e522b8b29e723, type: 3}
@@ -57770,6 +57773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 772654945}
+  door: {fileID: 1642480322}
 --- !u!4 &1279213010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4115493598193296, guid: 5805ea9f4f3be384fbcc157d4d9f35f3, type: 3}
@@ -69104,6 +69108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 772654945}
+  door: {fileID: 1642480322}
 --- !u!4 &1527970174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4837329652793204, guid: 88498815dea432045b6eaa9875ec268a, type: 3}
@@ -74646,6 +74651,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0043dd1352c6e524aa4440b63292b22d, type: 3}
+--- !u!1 &1642480322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1768947436039628, guid: 1d46b704e2c5bc94b94f4b8528cc395b, type: 3}
+  m_PrefabInstance: {fileID: 1740850624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1643567529 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4901473579766394, guid: 7d1ab1afe627d24439d8dc51aee708c4, type: 3}
