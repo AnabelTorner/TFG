@@ -11,13 +11,13 @@ public class KeyPadScript : MonoBehaviour
     int padCodeIndex = 0;
 
     public GameObject door;
+    public GameObject padTrigger;
     public TextMeshProUGUI padCodeText;
     public TextMeshProUGUI codeText;
 
     private void Start()
     {
         code = codeText.text;
-        Debug.Log(code);
     }
 
     public void CodeFunction(string Numbers)
@@ -34,6 +34,8 @@ public class KeyPadScript : MonoBehaviour
         if (padCode == code)
         {
             RotateDoor();
+            padTrigger.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
     public void Delete()
