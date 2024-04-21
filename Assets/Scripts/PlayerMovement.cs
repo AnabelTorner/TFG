@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Velocidad de movimiento del jugador
+    public float moveSpeed = 3f; // Velocidad de movimiento del jugador
 
     private Rigidbody rb;
 
