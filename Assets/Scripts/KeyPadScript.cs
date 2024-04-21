@@ -18,6 +18,7 @@ public class KeyPadScript : MonoBehaviour
     private void Start()
     {
         code = codeText.text;
+        Debug.Log(code);
     }
 
     public void CodeFunction(string Numbers)
