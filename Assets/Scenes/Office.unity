@@ -18893,10 +18893,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1521983283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
-  m_SizeDelta: {x: 467.0317, y: 990}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 467.0317, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &371198886
 MonoBehaviour:
@@ -51977,10 +51977,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -72268,10 +72268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -80836,7 +80836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 13.400024, y: -11.580048}
+  m_AnchoredPosition: {x: 13.400024, y: -11.580078}
   m_SizeDelta: {x: 99.3945, y: 58.8274}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1693404039
@@ -94595,10 +94595,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -96736,6 +96736,18 @@ PrefabInstance:
     - target: {fileID: 7957706935964253056, guid: 55666319063766745be4be8f2aeb490a, type: 3}
       propertyPath: m_Name
       value: keyPad
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593866688728043648, guid: 55666319063766745be4be8f2aeb490a, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593866688728043648, guid: 55666319063766745be4be8f2aeb490a, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593866688728043648, guid: 55666319063766745be4be8f2aeb490a, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -100063,6 +100075,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1497589007956340370, guid: 6cf56bf308eb6d64daab57c1d7d35f80, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497589007956340370, guid: 6cf56bf308eb6d64daab57c1d7d35f80, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497589007956340370, guid: 6cf56bf308eb6d64daab57c1d7d35f80, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 3531551803094917045, guid: 6cf56bf308eb6d64daab57c1d7d35f80, type: 3}
       propertyPath: m_Name
       value: Nota
@@ -100253,6 +100277,18 @@ PrefabInstance:
     - target: {fileID: 1355986325680856224, guid: 9ece116ffab9e2741adad1e9c01c6204, type: 3}
       propertyPath: m_Name
       value: butonImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4502937677564678395, guid: 9ece116ffab9e2741adad1e9c01c6204, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4502937677564678395, guid: 9ece116ffab9e2741adad1e9c01c6204, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4502937677564678395, guid: 9ece116ffab9e2741adad1e9c01c6204, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 6347431599596448002, guid: 9ece116ffab9e2741adad1e9c01c6204, type: 3}
       propertyPath: m_LocalPosition.x
