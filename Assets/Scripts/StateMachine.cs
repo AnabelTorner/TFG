@@ -144,12 +144,4 @@ public class StateMachine : MonoBehaviour
             ChangeState(State.Chase);
         }
     }    
-    
-    void OnCollisionEnter(Collision collision)
-    {
-        if (currentState != State.Chase && collision.gameObject.tag == "Player")
-        {
-            //FIN DEL JUEGO
-        }
-    }
 }
