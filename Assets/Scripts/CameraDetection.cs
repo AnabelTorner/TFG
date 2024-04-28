@@ -1,11 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class CameraDetection : MonoBehaviour
 {
-    private void OnTriggerEnter()
+    // Delegado para el evento de detección de jugador
+    public static event Action<Vector3> OnPlayerDetected;
+
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Pillado");
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Detectado");
+            // Obtener la posición del jugador
+            Vector3 playerPosition = other.transform.position;
+            // Notificar a todos los suscriptores del evento
+            OnPlayerDetected?.Invoke(playerPosition);
+        }
     }
 }
