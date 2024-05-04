@@ -66,9 +66,20 @@ public class StateMachine : MonoBehaviour
         while (currentState == State.Wait)
         {
             timer -= Time.deltaTime;
-            if (timer <= 0) ChangeState(State.Normal);
+            if (timer <= 0)
+            {
+                ChangeState(State.Normal);
+            }
+            else
+            {
+                // Cambiar a la animación "looking"
+                GetComponent<Animator>().Play("looking");
+            }
             yield return null;
         }
+
+        // Restaurar la animación original al salir del estado de espera
+        GetComponent<Animator>().Play("walking");
     }
 
     IEnumerator Chase()
