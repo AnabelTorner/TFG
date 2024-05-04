@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameEnding : MonoBehaviour
 {
@@ -7,6 +6,7 @@ public class GameEnding : MonoBehaviour
     public float displayImageDuration = 3f;
     public GameObject player;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
+    public CitySpawnManager citySpawnManager;
 
     float m_Timer;
     bool playerCaught = false;
@@ -31,7 +31,8 @@ public class GameEnding : MonoBehaviour
 
         if (m_Timer > fadeDuration + displayImageDuration)
         {
-            SceneManager.LoadScene(2); //City
+            citySpawnManager.PlayerCaught();
+            citySpawnManager.LoadCityScene();
         }
     }
 }
