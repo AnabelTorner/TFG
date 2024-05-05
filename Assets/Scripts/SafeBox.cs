@@ -1,13 +1,17 @@
 using UnityEngine;
+using TMPro;
 
 public class SafeBox : MonoBehaviour
 {
-
     public GameObject safeInventory;
+    public TextMeshProUGUI money;
+    public MoneyManager moneyManager;
 
     void Start()
     {
         safeInventory.SetActive(false);
+        moneyManager = FindObjectOfType<MoneyManager>();
+        money.text = moneyManager.GetPlayerMoney().ToString() + "€";
     }
 
     private void OnTriggerStay()

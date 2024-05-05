@@ -1,10 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class exitManagment : MonoBehaviour
 {
     public CitySpawnManager citySpawnManager;
+
+    private void Start()
+    {
+        // Buscar automáticamente una instancia de CitySpawnManager en la escena actual
+        citySpawnManager = FindObjectOfType<CitySpawnManager>();
+    }
 
     private void OnTriggerStay()
     {

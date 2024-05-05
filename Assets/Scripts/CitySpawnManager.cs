@@ -1,18 +1,23 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CitySpawnManager : MonoBehaviour
 {
-    public Vector3 cityPlayerStartPosition; // Posición de inicio en la ciudad
-    public Vector3 policePlayerStartPosition; // Posición de inicio en la oficina
+    public Vector3 cityPlayerStartPosition; // Posición de inicio en el último edificio al que se ha accedido
+    public Vector3 policePlayerStartPosition; // Posición de inicio en la policia
 
     public static CitySpawnManager instance;
+    public TextMeshProUGUI moneyMessage = null;
+    public MoneyManager moneyManager;
 
     private bool playerCaught = false;
+    private string previousScene;
 
     void Awake()
     {
-        // Verifica si ya existe una instancia del GameManager
+        // Verifica si ya existe una instancia del CitySpawnManager
         if (instance == null)
         {
             // Si no existe, establece esta instancia como la instancia única
@@ -32,9 +37,9 @@ public class CitySpawnManager : MonoBehaviour
     {
         // Carga la posición de inicio dependiendo de la escena actual
         string currentSceneName = SceneManager.GetActiveScene().name;
-        if (currentSceneName == "City")
+        if (currentSceneName == "City" && previousScene != "Lair")
         {
-            // Si el jugador fue capturado en la oficina, establece la posición de inicio de la oficina
+            // Si el jugador fue capturado, establece la posición de inicio en la policia
             if (playerCaught)
             {
                 SetPlayerStartPosition(policePlayerStartPosition);
@@ -43,18 +48,21 @@ public class CitySpawnManager : MonoBehaviour
             else
             {
                 SetPlayerStartPosition(cityPlayerStartPosition);
+                FindMoneyMessage();
+                MoneyMessage();
             }
+        }
+        else
+        {
+            previousScene = currentSceneName;
         }
     }
 
     public void SetPlayerStartPosition(Vector3 position)
     {
-        // Asegúrate de que el jugador siempre comience en la posición especificada.
+        // Mover al jugador a la posición especificada
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            player.transform.position = position;
-        }
+        player.transform.position = position;
     }
 
     public void PlayerCaught()
@@ -71,4 +79,58 @@ public class CitySpawnManager : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+
+    private void FindMoneyMessage()
+    {
+        GameObject moneyMessageObject = GameObject.FindGameObjectWithTag("MoneyMessage");
+        moneyMessage = moneyMessageObject.GetComponent<TextMeshProUGUI>();
+    }
+
+    private void MoneyMessage()
+    {
+        AssignMessage();
+        AssignMoney();
+        moneyMessage.gameObject.SetActive(true);
+        Invoke("FadeAndDeactivateMoneyMessage", 5f); // Invocar el método después de 5 segundos
+    }
+
+    private void FadeAndDeactivateMoneyMessage()
+    {
+        // Asumiendo que tienes un componente CanvasGroup en moneyMessage para controlar la transparencia
+        CanvasGroup canvasGroup = moneyMessage.GetComponent<CanvasGroup>();
+
+        // Iniciar el proceso de desvanecimiento utilizando una corrutina
+        StartCoroutine(FadeOut(canvasGroup, 1f)); // Duración de 1 segundo
+    }
+
+    private IEnumerator FadeOut(CanvasGroup canvasGroup, float duration)
+    {
+        float currentTime = 0f;
+        float startAlpha = canvasGroup.alpha;
+        float targetAlpha = 0f; // Desvanecer completamente
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, currentTime / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = targetAlpha;
+
+        // Desactivar el mensaje después de desvanecerlo
+        moneyMessage.gameObject.SetActive(false);
+    }
+
+    private void AssignMessage()
+    {
+        if (previousScene == "Office") moneyMessage.text = "Has vendido el USB a unos Ciudadanos Naturalmente Inteligentes. Has ganado 1000€ que han sido depositados en tu caja fuerte";
+    }
+
+    private void AssignMoney()
+    {
+        if (previousScene == "Office") moneyManager.AddMoney(1000);
+        Debug.Log(moneyManager.GetPlayerMoney());
+    }
+
 }
