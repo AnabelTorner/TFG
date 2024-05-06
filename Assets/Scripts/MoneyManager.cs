@@ -35,6 +35,12 @@ public class MoneyManager : MonoBehaviour
         SavePlayerMoney();
     }
 
+    public void SubstractMoney(int amount)
+    {
+        playerMoney -= amount;
+        SavePlayerMoney();
+    }
+
     private void SavePlayerMoney()
     {
         PlayerPrefs.SetInt(moneyKey, playerMoney);
