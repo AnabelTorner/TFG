@@ -4923,7 +4923,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1002415350}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1453862277}
+        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
+        m_MethodName: ComprarVelocidad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1002415350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6608,7 +6620,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1451653907}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1453862277}
+        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
+        m_MethodName: ComprarInvisibilidad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1451653907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6658,6 +6682,7 @@ GameObject:
   - component: {fileID: 1453862275}
   - component: {fileID: 1453862274}
   - component: {fileID: 1453862276}
+  - component: {fileID: 1453862277}
   m_Layer: 0
   m_Name: pcTrigger
   m_TagString: Untagged
@@ -6714,6 +6739,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatImg: {fileID: 495255195}
+--- !u!114 &1453862277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453862273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f91d27f6e085f478edc4f0ad7e74e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pcShop: {fileID: 1310444455}
+  moneyManager: {fileID: 134949875}
+  velocidadButton: {fileID: 1002415349}
+  velocidadPrecio: 5000
+  invisibilidadButton: {fileID: 1451653906}
+  invisibilidadPrecio: 10000
 --- !u!1001 &1455174727
 PrefabInstance:
   m_ObjectHideFlags: 0
