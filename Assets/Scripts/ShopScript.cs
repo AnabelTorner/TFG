@@ -5,11 +5,14 @@ public class ShopScript : MonoBehaviour
 {
     public GameObject pcShop;
     public MoneyManager moneyManager;
+    public BonusManager bonusManager;
 
     public Button velocidadButton;
+    public GameObject checkMarkVelocidad;
     public int velocidadPrecio = 5000;
 
     public Button invisibilidadButton;
+    public GameObject checkMarkInvisibilidad;
     public int invisibilidadPrecio = 10000;
 
     void Start()
@@ -23,6 +26,10 @@ public class ShopScript : MonoBehaviour
         {
             pcShop.SetActive(true);
             buttonState();
+            if (bonusManager.GetVelocidadComprada()) checkMarkVelocidad.SetActive(true);
+            else checkMarkVelocidad.SetActive(false);
+            if (bonusManager.GetInvisibilidadComprada()) checkMarkInvisibilidad.SetActive(true);
+            else checkMarkInvisibilidad.SetActive(false);
         }
     }
 
@@ -34,8 +41,8 @@ public class ShopScript : MonoBehaviour
     private void buttonState()
     {
         int money = moneyManager.GetPlayerMoney();
-        velocidadButton.interactable = money  >= velocidadPrecio;
-        invisibilidadButton.interactable = money >= invisibilidadPrecio;
+        velocidadButton.interactable = money  >= velocidadPrecio && !bonusManager.velocidadComprada;
+        invisibilidadButton.interactable = money >= invisibilidadPrecio && !bonusManager.invisibilidadComprada;
     }
 
     public void ComprarVelocidad()
@@ -44,11 +51,8 @@ public class ShopScript : MonoBehaviour
         {
             moneyManager.SubstractMoney(velocidadPrecio);
             buttonState();
-            // Añadir código compra velocidad
-        }
-        else
-        {
-            Debug.Log("No tienes suficiente dinero para comprar la velocidad.");
+            bonusManager.VelocidadComprada();
+            checkMarkVelocidad.SetActive(true);
         }
     }
 
@@ -58,11 +62,8 @@ public class ShopScript : MonoBehaviour
         {
             moneyManager.SubstractMoney(invisibilidadPrecio);
             buttonState();
-            // Añadir código compra invisibilidad
-        }
-        else
-        {
-            Debug.Log("No tienes suficiente dinero para comprar la invisibilidad.");
+            bonusManager.InvisibilidadComprada();
+            checkMarkInvisibilidad.SetActive(true);
         }
     }
 }
