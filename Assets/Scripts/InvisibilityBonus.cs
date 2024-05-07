@@ -3,47 +3,76 @@ using TMPro;
 
 public class InvisibilityBonus : MonoBehaviour
 {
-    public TextMeshProUGUI textoTimer;
-    private float tiempoRestante = 30f;
-    private bool temporizadorActivo = false;
+    public TextMeshProUGUI cooldownTimer;
+    public TextMeshProUGUI bonusTimer;
+
+    private float cooldownTime = 30f;
+    private float bonusTime = 5f;
+
+    private bool cooldownActive = false;
+    private bool bonusActive = false;
 
     void Start()
     {
-        // Desactivar el texto al inicio
-        textoTimer.gameObject.SetActive(false);
+        // Desactivar los textos al inicio
+        cooldownTimer.gameObject.SetActive(false);
+        bonusTimer.gameObject.SetActive(false);
     }
 
     void Update()
     {
         // Verificar si se presiona la tecla F para iniciar el temporizador
-        if (!temporizadorActivo && Input.GetKeyDown(KeyCode.F))
+        if (!cooldownActive && Input.GetKeyDown(KeyCode.F))
         {
-            IniciarTemporizador();
+            IniciarCooldown();
+            IniciarBonusTimer();
         }
 
-        if (temporizadorActivo)
+        if (cooldownActive)
         {
-            // Actualizar el temporizador
-            tiempoRestante -= Time.deltaTime;
+            ActualizarTemporizador(ref cooldownTime, cooldownTimer);
 
-            // Mostrar el tiempo restante en el texto
-            textoTimer.text = Mathf.RoundToInt(tiempoRestante).ToString();
-
-            // Si el temporizador llega a cero, detener el temporizador y desactivar el texto
-            if (tiempoRestante <= 0)
+            if (cooldownTime <= 0)
             {
-                tiempoRestante = 0;
-                temporizadorActivo = false;
-                textoTimer.gameObject.SetActive(false);
+                cooldownTime = 0;
+                cooldownActive = false;
+                cooldownTimer.gameObject.SetActive(false);
+            }
+        }
+
+        if (bonusActive)
+        {
+            ActualizarTemporizador(ref bonusTime, bonusTimer);
+
+            if (bonusTime <= 0)
+            {
+                bonusTime = 0;
+                bonusActive = false;
+                bonusTimer.gameObject.SetActive(false);
             }
         }
     }
 
-    // Función para iniciar el temporizador
-    public void IniciarTemporizador()
+    // Función para iniciar el temporizador de cooldown
+    void IniciarCooldown()
     {
-        tiempoRestante = 30f; // Reiniciar el temporizador
-        temporizadorActivo = true; // Activar el temporizador
-        textoTimer.gameObject.SetActive(true); // Activar el texto
+        cooldownTime = 30f;
+        cooldownActive = true;
+        cooldownTimer.gameObject.SetActive(true);
+    }
+
+    // Función para iniciar el temporizador de bonificación
+    void IniciarBonusTimer()
+    {
+        bonusTime = 5f;
+        bonusActive = true;
+        bonusTimer.gameObject.SetActive(true);
+    }
+
+    // Función para actualizar un temporizador
+    void ActualizarTemporizador(ref float tiempoRestante, TextMeshProUGUI textoTemporizador)
+    {
+        tiempoRestante -= Time.deltaTime;
+        textoTemporizador.text = Mathf.RoundToInt(tiempoRestante).ToString();
     }
 }
