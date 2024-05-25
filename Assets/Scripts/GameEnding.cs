@@ -11,6 +11,11 @@ public class GameEnding : MonoBehaviour
     float m_Timer;
     bool playerCaught = false;
 
+    void Start()
+    {
+        citySpawnManager = FindObjectOfType<CitySpawnManager>();
+    }
+
     private void Update()
     {
         if (playerCaught) EndLevel();
