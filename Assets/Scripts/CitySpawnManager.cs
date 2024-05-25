@@ -124,7 +124,7 @@ public class CitySpawnManager : MonoBehaviour
 
     private void AssignMessage()
     {
-        if (previousScene == "Office") moneyMessage.text = "Has vendido el USB a unos Ciudadanos Naturalmente Inteligentes. Has ganado 1000€ que han sido depositados en tu caja fuerte";
+        if (previousScene == "Office") moneyMessage.text = "Has vendido el USB a unos Ciudadanos Naturalmente Inteligentes. Has ganado 1000Zc que han sido depositados en tu caja fuerte";
     }
 
     private void AssignMoney()

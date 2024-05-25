@@ -18,7 +18,7 @@ public class SafeBox : MonoBehaviour
         if (Input.GetKey(KeyCode.E)) // Comprueba que se pulsa la tecla E
         {
             safeInventory.SetActive(true);
-            money.text = moneyManager.GetPlayerMoney().ToString() + "€";
+            money.text = moneyManager.GetPlayerMoney().ToString() + "Zc";
         }
     }
 
