@@ -7,6 +7,7 @@ public class restartScript : MonoBehaviour
     public MoneyManager moneyManager;
     public BonusManager bonusManager;
     public GameObject cuadroAviso;
+    public GameObject InvisibilityBonusCanvas;
 
     private void OnTriggerStay()
     {
@@ -21,5 +22,6 @@ public class restartScript : MonoBehaviour
         moneyManager.RestartMoney();
         bonusManager.RestartBonus();
         cuadroAviso.SetActive(false);
+        InvisibilityBonusCanvas.SetActive(false);
     }
 }

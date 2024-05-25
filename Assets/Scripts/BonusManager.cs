@@ -6,6 +6,8 @@ public class BonusManager : MonoBehaviour
 {
     public static BonusManager instance;
 
+    public GameObject invisibilityBonusCanvas;
+
     private string velocityKey = "VelocityBonus";
     private string invisibilityKey = "InvisibilityBonus";
 
@@ -32,6 +34,7 @@ public class BonusManager : MonoBehaviour
     private void Start()
     {
         LoadPlayerBonus();
+        if(GetInvisibilidadComprada()) BonusInvisibilityActive();
     }
 
     private void SavePlayerBonus()
@@ -69,6 +72,12 @@ public class BonusManager : MonoBehaviour
     {
         invisibilidadComprada = true;
         SavePlayerBonus();
+        BonusInvisibilityActive();
+    }
+
+    private void BonusInvisibilityActive()
+    {
+        invisibilityBonusCanvas.SetActive(true);
     }
 
     public void RestartBonus()

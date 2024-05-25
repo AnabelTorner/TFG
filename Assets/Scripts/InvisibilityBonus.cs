@@ -17,6 +17,7 @@ public class InvisibilityBonus : MonoBehaviour
         // Desactivar los textos al inicio
         cooldownTimer.gameObject.SetActive(false);
         bonusTimer.gameObject.SetActive(false);
+
     }
 
     void Update()
