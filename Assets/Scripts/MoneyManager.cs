@@ -39,6 +39,12 @@ public class MoneyManager : MonoBehaviour
     {
         playerMoney -= amount;
         SavePlayerMoney();
+    }    
+    
+    public void RestartMoney()
+    {
+        playerMoney = 0;
+        SavePlayerMoney();
     }
 
     private void SavePlayerMoney()

@@ -70,4 +70,11 @@ public class BonusManager : MonoBehaviour
         invisibilidadComprada = true;
         SavePlayerBonus();
     }
+
+    public void RestartBonus()
+    {
+        velocidadComprada = false;
+        invisibilidadComprada = false;
+        SavePlayerBonus();
+    }
 }
