@@ -11214,6 +11214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ea0f6937c55604ab7bef6528d5be56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusManager: {fileID: 0}
+  invisibilityBonusCanvas: {fileID: 0}
 --- !u!64 &227890853
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23986,6 +23988,8 @@ MonoBehaviour:
   - {fileID: 722627203}
   secondsWaiting: 5
   chaseSpeed: 2.5
+  bonusManager: {fileID: 0}
+  invisibilityBonusCanvas: {fileID: 0}
 --- !u!136 &477387322
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -24049,6 +24053,8 @@ MonoBehaviour:
   player: {fileID: 1079811745}
   caughtBackgroundImageCanvasGroup: {fileID: 1659815750}
   citySpawnManager: {fileID: 0}
+  bonusManager: {fileID: 0}
+  invisibilityBonusCanvas: {fileID: 0}
 --- !u!4 &478196668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4944122749333832, guid: 2d57c064a79852544948bfb78fd762d7, type: 3}
@@ -26472,6 +26478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ea0f6937c55604ab7bef6528d5be56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusManager: {fileID: 0}
+  invisibilityBonusCanvas: {fileID: 0}
 --- !u!64 &530956745
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31618,6 +31626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ea0f6937c55604ab7bef6528d5be56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusManager: {fileID: 0}
+  invisibilityBonusCanvas: {fileID: 0}
 --- !u!64 &627836932
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -51891,54 +51901,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4674961341080828, guid: b1db80d10aab7344287c50db3e6218a2, type: 3}
   m_PrefabInstance: {fileID: 1624098850}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1073332992
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1073332994}
-  - component: {fileID: 1073332993}
-  m_Layer: 0
-  m_Name: test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1073332993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073332992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf87c4e4bef6bda42a7b5a4cc3256d5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bonusManager: {fileID: 0}
-  invisibilityBonusCanvas: {fileID: 0}
-  cooldownTimer: {fileID: 0}
-  bonusTimer: {fileID: 0}
---- !u!4 &1073332994
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073332992}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 708.63727, y: 141.46896, z: 3.0070221}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1079181659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4503812955185784, guid: 610fb923aa6001549b857ef2559384cd, type: 3}
@@ -100715,4 +100677,3 @@ SceneRoots:
   - {fileID: 477387316}
   - {fileID: 763002422}
   - {fileID: 46016919}
-  - {fileID: 1073332994}

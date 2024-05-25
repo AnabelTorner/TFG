@@ -22,6 +22,10 @@ public class StateMachine : MonoBehaviour
     private int currentWaypointIndex;
     private Coroutine currentStateCoroutine;
 
+    //Invisibility bonus
+    public BonusManager bonusManager;
+    public InvisibilityBonus invisibilityBonusCanvas;
+
     void Start()
     {
         currentState = State.Normal;
@@ -31,6 +35,10 @@ public class StateMachine : MonoBehaviour
 
         StartCoroutine(FSM());
         Debug.Log(currentState);
+
+        //Invisibility bonus
+        bonusManager = FindObjectOfType<BonusManager>();
+        invisibilityBonusCanvas = bonusManager.GetComponent<InvisibilityBonus>();
     }
 
     IEnumerator FSM()
@@ -149,7 +157,7 @@ public class StateMachine : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (currentState != State.Chase && other.gameObject.tag == "Player")
+        if (currentState != State.Chase && other.gameObject.tag == "Player" && !invisibilityBonusCanvas.GetInvisibility())
         {
             ChangeState(State.Chase);
         }

@@ -11,9 +11,17 @@ public class GameEnding : MonoBehaviour
     float m_Timer;
     bool playerCaught = false;
 
+    //Invisibility bonus
+    public BonusManager bonusManager;
+    public InvisibilityBonus invisibilityBonusCanvas;
+
     void Start()
     {
         citySpawnManager = FindObjectOfType<CitySpawnManager>();
+
+        //Invisibility bonus
+        bonusManager = FindObjectOfType<BonusManager>();
+        invisibilityBonusCanvas = bonusManager.GetComponent<InvisibilityBonus>();
     }
 
     private void Update()
@@ -23,7 +31,7 @@ public class GameEnding : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !invisibilityBonusCanvas.GetInvisibility())
         {
             playerCaught = true;
         }
