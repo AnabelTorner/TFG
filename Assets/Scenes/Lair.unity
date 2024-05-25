@@ -8896,7 +8896,7 @@ MonoBehaviour:
   moneyManager: {fileID: 134949875}
   bonusManager: {fileID: 1937700273}
   cuadroAviso: {fileID: 1726499989}
-  InvisibilityBonusCanvas: {fileID: 2051954312}
+  invisibilityBonusCanvas: {fileID: 0}
 --- !u!1001 &1558390064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11107,6 +11107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTimer: {fileID: 1588604330}
   bonusTimer: {fileID: 100580456}
+  invisible: 0
 --- !u!1001 &1940108914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11607,11 +11608,11 @@ GameObject:
   - component: {fileID: 2051954313}
   m_Layer: 0
   m_Name: invisibilityBonusCanvas
-  m_TagString: Untagged
+  m_TagString: Invisibility
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2051954313
 Transform:
   m_ObjectHideFlags: 0

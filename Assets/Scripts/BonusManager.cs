@@ -34,7 +34,7 @@ public class BonusManager : MonoBehaviour
     private void Start()
     {
         LoadPlayerBonus();
-        if(GetInvisibilidadComprada()) BonusInvisibilityActive();
+        BonusInvisibilityActive();
     }
 
     private void SavePlayerBonus()
@@ -71,13 +71,20 @@ public class BonusManager : MonoBehaviour
     public void InvisibilidadComprada()
     {
         invisibilidadComprada = true;
-        SavePlayerBonus();
         BonusInvisibilityActive();
+        SavePlayerBonus();
     }
 
     private void BonusInvisibilityActive()
     {
-        invisibilityBonusCanvas.SetActive(true);
+        if (GetInvisibilidadComprada())
+        {
+            invisibilityBonusCanvas.SetActive(true);
+        }
+        else
+        {
+            invisibilityBonusCanvas.SetActive(false);
+        }
     }
 
     public void RestartBonus()

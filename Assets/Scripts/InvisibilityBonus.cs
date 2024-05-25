@@ -12,6 +12,8 @@ public class InvisibilityBonus : MonoBehaviour
     private bool cooldownActive = false;
     private bool bonusActive = false;
 
+    public bool invisible = false;
+
     void Start()
     {
         // Desactivar los textos al inicio
@@ -27,6 +29,7 @@ public class InvisibilityBonus : MonoBehaviour
         {
             IniciarCooldown();
             IniciarBonusTimer();
+            invisible = true;
         }
 
         if (cooldownActive)
@@ -38,6 +41,7 @@ public class InvisibilityBonus : MonoBehaviour
                 cooldownTime = 0;
                 cooldownActive = false;
                 cooldownTimer.gameObject.SetActive(false);
+                invisible = false;
             }
         }
 

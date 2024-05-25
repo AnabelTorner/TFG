@@ -50,9 +50,9 @@ public class ShopScript : MonoBehaviour
         if (moneyManager.GetPlayerMoney() >= velocidadPrecio)
         {
             moneyManager.SubstractMoney(velocidadPrecio);
-            buttonState();
             bonusManager.VelocidadComprada();
             checkMarkVelocidad.SetActive(true);
+            buttonState();
         }
     }
 
@@ -61,9 +61,9 @@ public class ShopScript : MonoBehaviour
         if (moneyManager.GetPlayerMoney() >= invisibilidadPrecio)
         {
             moneyManager.SubstractMoney(invisibilidadPrecio);
-            buttonState();
             bonusManager.InvisibilidadComprada();
             checkMarkInvisibilidad.SetActive(true);
+            buttonState();
         }
     }
 }

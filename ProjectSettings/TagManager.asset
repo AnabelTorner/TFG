@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ID
   - MoneyMessage
+  - Invisibility
   layers:
   - Default
   - TransparentFX

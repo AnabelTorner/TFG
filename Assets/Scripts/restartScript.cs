@@ -7,7 +7,16 @@ public class restartScript : MonoBehaviour
     public MoneyManager moneyManager;
     public BonusManager bonusManager;
     public GameObject cuadroAviso;
-    public GameObject InvisibilityBonusCanvas;
+    public GameObject invisibilityBonusCanvas;
+
+    private void Start()
+    {
+        moneyManager = FindObjectOfType<MoneyManager>();
+        bonusManager = FindObjectOfType<BonusManager>();
+        
+        Transform foundTransform = bonusManager.transform.Find("invisibilityBonusCanvas");
+        invisibilityBonusCanvas = foundTransform.gameObject;
+    }
 
     private void OnTriggerStay()
     {
@@ -22,6 +31,6 @@ public class restartScript : MonoBehaviour
         moneyManager.RestartMoney();
         bonusManager.RestartBonus();
         cuadroAviso.SetActive(false);
-        InvisibilityBonusCanvas.SetActive(false);
+        invisibilityBonusCanvas.SetActive(false);
     }
 }
