@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class restartScript : MonoBehaviour
@@ -32,5 +30,10 @@ public class restartScript : MonoBehaviour
         bonusManager.RestartBonus();
         cuadroAviso.SetActive(false);
         invisibilityBonusCanvas.SetActive(false);
+    }
+
+    public void OnTriggerExit()
+    {
+        cuadroAviso.SetActive(false);
     }
 }
