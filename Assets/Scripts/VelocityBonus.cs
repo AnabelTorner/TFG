@@ -10,6 +10,25 @@ public class VelocityBonus : MonoBehaviour
 
     void Start()
     {
+        // Registrar el callback cuando se carga una nueva escena
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+        // Comprueba si ya se compró la velocidad al iniciar
+        if (bonusManager.GetVelocidadComprada())
+        {
+            UpdateVelocity();
+        }
+    }
+
+    void OnDestroy()
+    {
+        // Desregistrar el callback cuando el objeto se destruye
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // Método que se llama cuando una nueva escena se carga
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
         if (bonusManager.GetVelocidadComprada())
         {
             UpdateVelocity();
@@ -29,5 +48,4 @@ public class VelocityBonus : MonoBehaviour
         PlayerMovement playerMovement = playerGameObject.GetComponent<PlayerMovement>();
         playerMovement.moveSpeed = initialMoveSpeed;
     }
-
 }
