@@ -4,6 +4,7 @@ public class restartScript : MonoBehaviour
 {
     public MoneyManager moneyManager;
     public BonusManager bonusManager;
+    public VelocityBonus velocityBonus;
     public GameObject cuadroAviso;
     public GameObject invisibilityBonusCanvas;
 
@@ -11,6 +12,7 @@ public class restartScript : MonoBehaviour
     {
         moneyManager = FindObjectOfType<MoneyManager>();
         bonusManager = FindObjectOfType<BonusManager>();
+        velocityBonus = FindObjectOfType<VelocityBonus>();
         
         Transform foundTransform = bonusManager.transform.Find("invisibilityBonusCanvas");
         invisibilityBonusCanvas = foundTransform.gameObject;
@@ -30,6 +32,7 @@ public class restartScript : MonoBehaviour
         bonusManager.RestartBonus();
         cuadroAviso.SetActive(false);
         invisibilityBonusCanvas.SetActive(false);
+        velocityBonus.restartVelocity();
     }
 
     public void OnTriggerExit()

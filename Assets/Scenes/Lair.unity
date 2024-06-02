@@ -10267,6 +10267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyManager: {fileID: 134949875}
   bonusManager: {fileID: 1937700273}
+  velocityBonus: {fileID: 0}
   cuadroAviso: {fileID: 1726499989}
   invisibilityBonusCanvas: {fileID: 0}
 --- !u!1001 &1558390064
@@ -12870,8 +12871,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1937700274}
   - component: {fileID: 1937700273}
-  - component: {fileID: 1937700275}
   - component: {fileID: 1937700276}
+  - component: {fileID: 1937700277}
   m_Layer: 0
   m_Name: BonusManager
   m_TagString: Untagged
@@ -12891,6 +12892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de1da25f0790114ab3ca09a0465bd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocityBonus: {fileID: 1937700277}
   invisibilityBonusCanvas: {fileID: 2051954312}
   velocidadComprada: 0
   invisibilidadComprada: 0
@@ -12910,21 +12912,6 @@ Transform:
   - {fileID: 2051954313}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1937700275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1937700272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07f11455b393da24c8b5df2007e6d9d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bonusManager: {fileID: 1937700273}
-  velocidadAumento: 0
-  newMoveSpeed: 3.45
 --- !u!114 &1937700276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12939,6 +12926,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTimer: {fileID: 1588604330}
   bonusTimer: {fileID: 100580456}
+--- !u!114 &1937700277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937700272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f11455b393da24c8b5df2007e6d9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusManager: {fileID: 1937700273}
+  newMoveSpeed: 3.45
+  initialMoveSpeed: 3
 --- !u!1001 &1940108914
 PrefabInstance:
   m_ObjectHideFlags: 0

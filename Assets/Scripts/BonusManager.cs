@@ -5,6 +5,7 @@ using UnityEngine;
 public class BonusManager : MonoBehaviour
 {
     public static BonusManager instance;
+    public VelocityBonus velocityBonus;
 
     public GameObject invisibilityBonusCanvas;
 
@@ -65,6 +66,7 @@ public class BonusManager : MonoBehaviour
     public void VelocidadComprada()
     {
         velocidadComprada = true;
+        velocityBonus.UpdateVelocity();
         SavePlayerBonus();
     }
 
